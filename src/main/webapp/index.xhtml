@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:f="jakarta.faces.core"
+      xmlns:h="jakarta.faces.html">
+
+<h:head>
+    <title>Produtos</title>
+    <h:outputStylesheet library="css" name="style.css"/>
+</h:head>
+
+<h:body>
+
+    <h:panelGroup layout="block" styleClass="page">
+
+        <h:form styleClass="form-container">
+
+            <h:panelGrid columns="2" columnClasses="label,field">
+                <h:outputLabel value="Nome:" for="nome"/>
+                <h:inputText id="nome" value="#{produtoController.produto.nome}"/>
+
+                <h:outputLabel value="Preço:" for="preco"/>
+                <h:inputText id="preco" value="#{produtoController.produto.preco}"/>
+            </h:panelGrid>
+
+            <h:commandButton value="Salvar" styleClass="btn" action="#{produtoController.salvar}"/>
+
+        </h:form>
+
+        <h:form>
+        <h:dataTable value="#{produtoController.produtos}"
+                     var="p"
+                     styleClass="table"
+                     columnClasses="col-id,col-nome,col-preco">
+
+            <h:column>
+                <f:facet name="header">ID</f:facet>
+                #{p.id}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">NOME</f:facet>
+                #{p.nome}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">PREÇO</f:facet>
+                #{p.preco}
+            </h:column>
+            <h:column>
+                <f:facet name="header"></f:facet>
+                <h:commandButton value="Delete"
+                                 action="#{produtoController.deletar(p)}"
+                                 onclick="return confirm('Deletar esse produto?')" />
+            </h:column>
+
+        </h:dataTable>
+        </h:form>
+    </h:panelGroup>
+
+</h:body>
+</html>

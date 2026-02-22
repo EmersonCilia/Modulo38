@@ -1,0 +1,44 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.form-container {
+    margin-bottom: 20px;
+}
+
+.label {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.field input {
+    width: 200px;
+}
+
+.table {
+    display: block;
+    width: 400px;
+    margin: 0 auto;
+    table-layout: fixed;
+}
+
+.col-id {
+    width: 50px;
+    text-align: center;
+    border: 1px solid black
+}
+
+.col-nome {
+    width: 250px;
+    text-align: center;
+    border: 1px solid black
+}
+
+.col-preco {
+    width: 100px;
+    text-align: center;
+    border: 1px solid black
+}
