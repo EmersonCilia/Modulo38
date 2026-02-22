@@ -6,7 +6,7 @@ import jakarta.persistence.Persistence;
 public class JPAUtil {
 
     private static final EntityManagerFactory EMF =
-            Persistence.createEntityManagerFactory("monolithPU");
+            Persistence.createEntityManagerFactory("monolito");
 
     public static EntityManagerFactory getEmf() {
         return EMF;
